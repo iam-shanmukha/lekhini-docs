@@ -6,12 +6,12 @@ Public documentation and GitHub Pages site for [Lekhini](https://play.google.com
 
 | Page | URL |
 |------|-----|
-| App landing page | `https://vishnushanmukha.github.io/lekhini-docs/` |
-| Privacy Policy | `https://vishnushanmukha.github.io/lekhini-docs/privacy-policy.html` |
-| Play Store Listing | `https://vishnushanmukha.github.io/lekhini-docs/store-listing.html` |
+| App landing page | [iam-shanmukha.github.io/lekhini-docs](https://iam-shanmukha.github.io/lekhini-docs/) |
+| Privacy Policy | [iam-shanmukha.github.io/lekhini-docs/privacy-policy.html](https://iam-shanmukha.github.io/lekhini-docs/privacy-policy.html) |
+| Play Store Listing | [iam-shanmukha.github.io/lekhini-docs/store-listing.html](https://iam-shanmukha.github.io/lekhini-docs/store-listing.html) |
 
 > **Privacy Policy URL to paste in Play Console → App content → Privacy policy:**
-> `https://vishnushanmukha.github.io/lekhini-docs/privacy-policy.html`
+> https://iam-shanmukha.github.io/lekhini-docs/privacy-policy.html
 
 ## Files
 
