@@ -9,6 +9,7 @@ Public documentation and GitHub Pages site for [Lekhini](https://play.google.com
 | App landing page | [iam-shanmukha.github.io/lekhini-docs](https://iam-shanmukha.github.io/lekhini-docs/) |
 | Privacy Policy | [iam-shanmukha.github.io/lekhini-docs/privacy-policy.html](https://iam-shanmukha.github.io/lekhini-docs/privacy-policy.html) |
 | Play Store Listing | [iam-shanmukha.github.io/lekhini-docs/store-listing.html](https://iam-shanmukha.github.io/lekhini-docs/store-listing.html) |
+| Account Deletion | [iam-shanmukha.github.io/lekhini-docs/account-deletion.html](https://iam-shanmukha.github.io/lekhini-docs/account-deletion.html) |
 
 > **Privacy Policy URL to paste in Play Console → App content → Privacy policy:**
 > https://iam-shanmukha.github.io/lekhini-docs/privacy-policy.html
@@ -18,6 +19,7 @@ Public documentation and GitHub Pages site for [Lekhini](https://play.google.com
 - `index.html` — App landing page (store description, features, about)
 - `privacy-policy.html` — Full privacy policy for Play Store compliance
 - `store-listing.html` — Play Console reference: app title, short/full descriptions (with copy buttons + char counts), data safety form, content declarations, and graphic asset specs
+- `account-deletion.html` — Step-by-step account deletion instructions (required by Play Store policy)
 
 ## Setup (GitHub Pages)
 

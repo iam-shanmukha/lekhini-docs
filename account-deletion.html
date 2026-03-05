@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Your Account — Lekhini</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d0d14;
+      color: #e8e4dc;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+    a { color: #f97316; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 680px; margin: 0 auto; padding: 3rem 1rem 5rem; }
+    header { margin-bottom: 2.5rem; }
+    .wordmark { font-size: 1.5rem; font-weight: 700; color: #f97316; letter-spacing: -0.5px; }
+    .wordmark a { color: inherit; }
+    .back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; color: #888; }
+    .back:hover { color: #f97316; }
+
+    h1 { font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
+    .subtitle { font-size: 0.95rem; color: #666; margin-bottom: 2.5rem; }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f97316;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 2.5rem 0 1rem;
+    }
+    p { color: #ccc8bf; margin-bottom: 0.9rem; }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem; }
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: #12121e;
+      border: 1px solid #1e1e2e;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f97316;
+      color: #000;
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+    .step-body { flex: 1; }
+    .step-body strong { display: block; color: #fff; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .step-body span { font-size: 0.9rem; color: #888; }
+
+    /* Data deleted */
+    .data-list {
+      background: #12121e;
+      border: 1px solid #1e1e2e;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .data-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid #16162a;
+      font-size: 0.9rem;
+      color: #ccc8bf;
+    }
+    .data-row:last-child { border-bottom: none; }
+    .data-row .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f87171;
+      flex-shrink: 0;
+    }
+    .data-row .dot.keep { background: #4ade80; }
+
+    /* Warning box */
+    .warning {
+      background: #1a0f0f;
+      border: 1px solid #5c2020;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      color: #f87171;
+      margin-bottom: 1.5rem;
+    }
+    .warning strong { color: #fca5a5; }
+
+    /* Contact */
+    .contact-box {
+      background: #12121e;
+      border: 1px solid #1e1e2e;
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+    .contact-box p { margin: 0; font-size: 0.9rem; color: #888; }
+    .contact-box a { font-weight: 600; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1e1e2e;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    footer a { color: #666; margin-right: 0.75rem; }
+    footer a:hover { color: #f97316; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="wordmark"><a href="index.html">lekhini</a></div>
+  </header>
+
+  <a class="back" href="index.html">← Back</a>
+
+  <h1>Delete Your Account</h1>
+  <p class="subtitle">You can permanently delete your Lekhini account and all associated data at any time, directly from within the app.</p>
+
+  <h2>How to delete your account</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Open Lekhini and sign in</strong>
+        <span>Make sure you're signed in to the account you want to delete.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Go to your Profile</strong>
+        <span>Tap the Profile icon in the bottom navigation bar.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Open the menu</strong>
+        <span>Tap the three-dot menu (⋮) in the top-right corner of your profile.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Tap "Delete Account"</strong>
+        <span>Read the confirmation message and confirm that you want to permanently delete your account.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="warning">
+    <strong>This action is permanent and cannot be undone.</strong> Once deleted, your account and all your data cannot be recovered.
+  </div>
+
+  <h2>What gets deleted</h2>
+  <p>Deleting your account permanently removes the following data from our servers:</p>
+
+  <div class="data-list">
+    <div class="data-row"><div class="dot"></div> Your profile — display name, username, bio, website, profile and cover photos</div>
+    <div class="data-row"><div class="dot"></div> All quotes and poems you published</div>
+    <div class="data-row"><div class="dot"></div> All drafts you saved</div>
+    <div class="data-row"><div class="dot"></div> Your bookmarks</div>
+    <div class="data-row"><div class="dot"></div> Your follow relationships (followers and following)</div>
+    <div class="data-row"><div class="dot"></div> Your comments</div>
+    <div class="data-row"><div class="dot"></div> Your likes</div>
+    <div class="data-row"><div class="dot"></div> Your Firebase authentication account</div>
+  </div>
+
+  <p>Analytics and operational log data held by Firebase / Google may be retained for a period per <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's data retention policies</a>.</p>
+
+  <h2>Can't access the app?</h2>
+  <p>
+    If you're unable to sign in or access the app to delete your account, contact us directly and we'll delete your account and data manually. Please include the email address associated with your account.
+  </p>
+
+  <div class="contact-box">
+    <p>Email us at <a href="mailto:docs.vishnushanmukha@gmail.com">docs.vishnushanmukha@gmail.com</a> with the subject line <strong>"Account Deletion Request"</strong>. We'll process your request within 7 days.</p>
+  </div>
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    &copy; 2026 Shanmukha Vishnu
+  </footer>
+
+</div>
+</body>
+</html>
