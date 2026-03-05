@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play Store Listing — Lekhini</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d0d14;
+      color: #e8e4dc;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+    a { color: #f97316; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 3rem 1rem 5rem; }
+
+    header { margin-bottom: 2.5rem; }
+    .wordmark { font-size: 1.5rem; font-weight: 700; color: #f97316; letter-spacing: -0.5px; }
+    .wordmark a { color: inherit; }
+    .back { display: inline-block; margin: 1rem 0 2rem; font-size: 0.9rem; color: #888; }
+    .back:hover { color: #f97316; }
+
+    h1 { font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
+    .subtitle { font-size: 0.9rem; color: #666; margin-bottom: 2.5rem; }
+
+    /* Section */
+    .field { margin-bottom: 2.25rem; }
+    .field-label {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+    .field-label h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #f97316;
+    }
+    .field-label .limit {
+      font-size: 0.75rem;
+      color: #555;
+    }
+    .field-note {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Copy box */
+    .copy-box {
+      position: relative;
+      background: #12121e;
+      border: 1px solid #1e1e2e;
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+    }
+    .copy-box pre {
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #ddd;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.65;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.75rem;
+      background: #1e1e2e;
+      border: 1px solid #2e2e42;
+      border-radius: 6px;
+      color: #888;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .copy-btn:hover { color: #f97316; border-color: #f97316; }
+    .copy-btn.copied { color: #4ade80; border-color: #4ade80; }
+
+    /* Char count */
+    .char-count {
+      font-size: 0.75rem;
+      color: #555;
+      text-align: right;
+      margin-top: 0.35rem;
+    }
+    .char-count.warn { color: #f97316; }
+    .char-count.over { color: #f87171; }
+
+    /* Table field */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th {
+      text-align: left;
+      padding: 0.55rem 0.75rem;
+      background: #12121e;
+      color: #f97316;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid #1e1e2e;
+      color: #ccc8bf;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    .tag {
+      display: inline-block;
+      background: #1a1225;
+      border: 1px solid #3d2510;
+      border-radius: 999px;
+      color: #f97316;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      font-weight: 600;
+    }
+    .tag.green {
+      background: #0d1f15;
+      border-color: #1a4a28;
+      color: #4ade80;
+    }
+
+    /* Divider */
+    .divider { border: none; border-top: 1px solid #1e1e2e; margin: 2.5rem 0; }
+
+    /* Data safety table */
+    .data-table { background: #12121e; border: 1px solid #1e1e2e; border-radius: 10px; overflow: hidden; }
+    .data-table th { background: #0d0d14; border-bottom: 1px solid #1e1e2e; }
+    .data-table td { border-bottom: 1px solid #16162a; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1e1e2e;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    footer a { color: #666; margin-right: 0.75rem; }
+    footer a:hover { color: #f97316; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="wordmark"><a href="index.html">lekhini</a></div>
+  </header>
+
+  <a class="back" href="index.html">← Back</a>
+
+  <h1>Play Store Listing</h1>
+  <p class="subtitle">Reference copy for Google Play Console — store listing, data safety, and asset specs.</p>
+
+  <!-- ───── BASIC INFO ───── -->
+  <div class="field">
+    <div class="field-label"><h2>App title</h2><span class="limit">max 30 chars</span></div>
+    <div class="copy-box">
+      <pre id="title">Lekhini — Write &amp; Share Quotes</pre>
+      <button class="copy-btn" onclick="copyField('title', this)">Copy</button>
+    </div>
+    <div class="char-count" id="title-count"></div>
+  </div>
+
+  <!-- SHORT DESC -->
+  <div class="field">
+    <div class="field-label"><h2>Short description</h2><span class="limit">max 80 chars</span></div>
+    <p class="field-note">Shown on the store listing page below the app name.</p>
+    <div class="copy-box">
+      <pre id="short">A calm writing app for Telugu &amp; English writers. No ads. No noise.</pre>
+      <button class="copy-btn" onclick="copyField('short', this)">Copy</button>
+    </div>
+    <div class="char-count" id="short-count"></div>
+  </div>
+
+  <!-- FULL DESC -->
+  <div class="field">
+    <div class="field-label"><h2>Full description</h2><span class="limit">max 4000 chars</span></div>
+    <p class="field-note">Shown on the store listing page under "About this app". Plain text, no HTML.</p>
+    <div class="copy-box">
+      <pre id="full">Lekhini (లేఖిని) means "pen" in Telugu. It is a journal-first writing app built for Telugu and English writers who write because they must — not just to be seen.
+
+✦ QUOTE CARD BUILDER
+Write your thoughts, poems, and quotes in a full-screen editor. Style them with beautiful fonts, wallpapers, gradients, and patterns. Pick a photo from Unsplash or your gallery.
+
+✦ TELUGU &amp; ENGLISH
+Native support for Telugu script alongside English. Write in your language, your way.
+
+✦ WRITE PRIVATELY. SHARE WHEN YOU CHOOSE.
+Save drafts and write for yourself. Publish to the community feed only when you're ready. No pressure to share.
+
+✦ EXPORT &amp; SHARE
+Export your quote card as a high-resolution image. Share it to WhatsApp, Instagram, or any app — or save to your gallery.
+
+✦ SOCIAL — QUIETLY
+Follow writers you love. Like and bookmark quotes. Leave comments. None of the vanity metrics front and center.
+
+✦ DISCOVER WRITERS
+Find quotes by tag or search writers by username. A feed that shows people you follow first.
+
+✦ NO ADS. EVER.
+Lekhini is completely ad-free. Your attention stays on your writing.
+
+✦ FULL ACCOUNT CONTROL
+Edit or delete your content at any time. Delete your account entirely from within the app.
+
+---
+
+Early release. Growing with the community.
+Developed independently by Shanmukha Vishnu.
+
+Contact: docs.vishnushanmukha@gmail.com</pre>
+      <button class="copy-btn" onclick="copyField('full', this)">Copy</button>
+    </div>
+    <div class="char-count" id="full-count"></div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ───── CATEGORISATION ───── -->
+  <div class="field">
+    <div class="field-label"><h2>Category &amp; Tags</h2></div>
+    <div class="data-table">
+      <table>
+        <thead><tr><th>Field</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Category</td><td>Art &amp; Design <em style="color:#555">or</em> Books &amp; Reference</td></tr>
+          <tr><td>Content rating</td><td>Everyone (no objectionable content)</td></tr>
+          <tr><td>Interactive elements</td><td>Users interact, Shares location (no), Digital purchases (no)</td></tr>
+          <tr><td>Tags (up to 5)</td><td>writing, quotes, poetry, Telugu, journal</td></tr>
+          <tr><td>App website</td><td>https://vishnushanmukha.github.io/lekhini-docs/</td></tr>
+          <tr><td>Privacy policy URL</td><td>https://vishnushanmukha.github.io/lekhini-docs/privacy-policy.html</td></tr>
+          <tr><td>Support email</td><td>docs.vishnushanmukha@gmail.com</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ───── DATA SAFETY ───── -->
+  <div class="field">
+    <div class="field-label"><h2>Data Safety — Play Console Form</h2></div>
+    <p class="field-note">
+      Use the table below as a reference when filling the Data safety section in Play Console.
+      Each row is a data type Play Console asks you to declare.
+    </p>
+
+    <div class="data-table" style="margin-top:0.75rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>Data type</th>
+            <th>Collected</th>
+            <th>Shared</th>
+            <th>Purpose(s)</th>
+            <th>Optional?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>Account management, App functionality</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Email address</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>Account management</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>User IDs</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>Account management, App functionality</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Profile photo</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>App functionality (profile display)</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>User-generated content (quotes, comments)</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>App functionality</td>
+            <td>Yes — user publishes voluntarily</td>
+          </tr>
+          <tr>
+            <td>Other user-generated content (tags, captions)</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>App functionality</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>App interactions (likes, bookmarks, follows)</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>App functionality</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Crash logs / diagnostics</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>Analytics, App functionality</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Analytics / usage data</td>
+            <td><span class="tag">Yes</span></td>
+            <td><span class="tag">No</span></td>
+            <td>Analytics</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="field-note" style="margin-top:0.75rem;">
+      <strong style="color:#ccc">Data sale:</strong> No — data is not sold.<br />
+      <strong style="color:#ccc">Encryption in transit:</strong> Yes — all network calls use HTTPS/TLS.<br />
+      <strong style="color:#ccc">User data deletion:</strong> Yes — users can delete account in-app (Profile → Delete Account).
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ───── ASSET SPECS ───── -->
+  <div class="field">
+    <div class="field-label"><h2>Graphic Asset Specs</h2></div>
+    <div class="data-table">
+      <table>
+        <thead><tr><th>Asset</th><th>Required size</th><th>Format</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>App icon</td>
+            <td>512 × 512 px</td>
+            <td>PNG, 32-bit</td>
+            <td>No alpha rounding needed — Play Console crops it</td>
+          </tr>
+          <tr>
+            <td>Feature graphic</td>
+            <td>1024 × 500 px</td>
+            <td>PNG or JPG</td>
+            <td>Shown at top of listing and in Play Store banners. Keep key content centered.</td>
+          </tr>
+          <tr>
+            <td>Phone screenshots</td>
+            <td>min 320 px on shortest side; max 3840 px on longest side</td>
+            <td>PNG or JPG</td>
+            <td>Min 2, max 8. Recommended 1080 × 1920 px portrait. At least 2 required.</td>
+          </tr>
+          <tr>
+            <td>Tablet screenshots</td>
+            <td>7-inch and/or 10-inch</td>
+            <td>PNG or JPG</td>
+            <td>Optional but recommended for broader reach.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ───── APP CONTENT DECLARATIONS ───── -->
+  <div class="field">
+    <div class="field-label"><h2>App Content Declarations (Play Console)</h2></div>
+    <div class="data-table">
+      <table>
+        <thead><tr><th>Section</th><th>Answer</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Privacy policy</td>
+            <td>https://vishnushanmukha.github.io/lekhini-docs/privacy-policy.html</td>
+          </tr>
+          <tr>
+            <td>Ads</td>
+            <td>No ads</td>
+          </tr>
+          <tr>
+            <td>Content rating</td>
+            <td>Complete the questionnaire — expected result: Everyone</td>
+          </tr>
+          <tr>
+            <td>Target audience</td>
+            <td>18+ (or 13+ — no content specifically targeting children)</td>
+          </tr>
+          <tr>
+            <td>News app</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>COVID-19 contact tracing</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Data safety</td>
+            <td>Fill from the Data Safety table above</td>
+          </tr>
+          <tr>
+            <td>Government app</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Financial features</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    &copy; 2026 Shanmukha Vishnu
+  </footer>
+
+</div>
+
+<script>
+  // Character counter
+  function countChars(id, max) {
+    const el = document.getElementById(id);
+    const countEl = document.getElementById(id + '-count');
+    if (!el || !countEl) return;
+    const text = el.textContent || el.innerText;
+    // decode HTML entities for accurate count
+    const decoded = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    const len = decoded.length;
+    countEl.textContent = len + ' / ' + max + ' chars';
+    countEl.className = 'char-count' + (len > max ? ' over' : len > max * 0.9 ? ' warn' : '');
+  }
+
+  function copyField(id, btn) {
+    const el = document.getElementById(id);
+    const text = (el.textContent || el.innerText)
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .trim();
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // Run counts on load
+  countChars('title', 30);
+  countChars('short', 80);
+  countChars('full', 4000);
+</script>
+</body>
+</html>
