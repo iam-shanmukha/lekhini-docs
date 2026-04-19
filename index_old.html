@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lekhini — Write for yourself. Share when you're ready.</title>
+  <meta name="description" content="Lekhini is a journal-first writing app for Telugu and English writers. Craft beautiful quote cards. No follower counts. No ads. Ever." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d0d14;
+      color: #e8e4dc;
+      line-height: 1.7;
+    }
+    a { color: #f97316; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #1e1e2e;
+    }
+    .wordmark {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #f97316;
+      letter-spacing: -0.5px;
+    }
+    nav .links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+    nav .links a { color: #888; }
+    nav .links a:hover { color: #f97316; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: #1a1225;
+      color: #f97316;
+      border: 1px solid #3d2510;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.9rem;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.04em;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #f97316;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #9a9690;
+      max-width: 520px;
+      margin: 0 auto 2.25rem;
+    }
+    .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #f97316;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      transition: opacity 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.85; text-decoration: none; }
+    .btn-secondary {
+      background: transparent;
+      color: #ccc;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      border: 1px solid #333;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-secondary:hover { border-color: #f97316; color: #f97316; text-decoration: none; }
+
+    /* Features */
+    .section { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .section-label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #f97316;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3rem;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .feature-card {
+      background: #12121e;
+      border: 1px solid #1e1e2e;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .feature-card .icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .feature-card h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+    .feature-card p { font-size: 0.9rem; color: #888; line-height: 1.5; margin: 0; }
+
+    /* Divider */
+    .divider { border: none; border-top: 1px solid #1e1e2e; margin: 0; }
+
+    /* About */
+    .about { max-width: 680px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+    .about h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .about p { color: #9a9690; margin-bottom: 0.9rem; }
+
+    /* Specs */
+    .specs { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .spec-item {
+      background: #12121e;
+      border: 1px solid #1e1e2e;
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+    }
+    .spec-item .label { font-size: 0.75rem; color: #666; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+    .spec-item .value { font-size: 0.95rem; color: #ddd; font-weight: 500; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid #1e1e2e;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    footer a { color: #666; margin: 0 0.5rem; }
+    footer a:hover { color: #f97316; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wordmark">lekhini</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="store-listing.html">Play Store</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="account-deletion.html">Delete Account</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="badge">Now on Google Play</div>
+    <h1><em>Ink your thoughts.</em></h1>
+    <p>
+      Lekhini is for writers who write because they must — not just to be seen.
+    </p>
+    <div class="cta-group">
+      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.shanmukhavishnu.lekhini" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+      <a class="btn-secondary" href="privacy-policy.html">Privacy Policy</a>
+      <a class="btn-secondary" href="store-listing.html">Store Listing</a>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Features -->
+  <div class="section">
+    <p class="section-label">Features</p>
+    <h2>Everything a writer needs</h2>
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">✦</div>
+        <h3>Quote Card Builder</h3>
+        <p>Full-screen text editor with beautiful fonts and wallpapers. Design cards with your own style.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌿</div>
+        <h3>Telugu &amp; English</h3>
+        <p>Native support for Telugu script with Noto Sans Telugu. Write in your language, your way.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🖼</div>
+        <h3>Wallpapers &amp; Fonts</h3>
+        <p>16 built-in wallpapers, Unsplash photo search, gallery import. Multiple fonts including Kalam and Josefin Sans.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>Write Privately</h3>
+        <p>Save drafts and write for yourself. Publish only when you choose. No pressure to share.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤝</div>
+        <h3>Social — Quietly</h3>
+        <p>Follow writers, like and bookmark quotes, leave comments — without vanity metrics front and center.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📤</div>
+        <h3>Export &amp; Share</h3>
+        <p>Export quote cards as full-resolution images. Share to WhatsApp, Instagram, or any app.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🚫</div>
+        <h3>No Ads. Ever.</h3>
+        <p>Lekhini is completely ad-free. No tracking for advertising. Your attention stays on your writing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🗑</div>
+        <h3>Full Account Control</h3>
+        <p>Edit or delete your content at any time. Delete your account entirely from within the app.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- About -->
+  <div class="about" id="about">
+    <h2>About Lekhini</h2>
+    <p>
+      Lekhini (లేఖిని) means "pen" in Telugu. It was built for writers who write because they must —
+      not just to be seen.
+    </p>
+    <p>
+      Most writing and social apps optimize for engagement, follower counts, and likes.
+      Lekhini takes the opposite approach: ink your thoughts first, share when you choose.
+      The focus is on the craft of writing, not on performance metrics.
+    </p>
+    <p>
+      The app is in early release and growing with the community.
+      Developed independently by Shanmukha Vishnu.
+    </p>
+  </div>
+
+  <!-- Specs -->
+  <div class="specs">
+    <div class="spec-grid">
+      <div class="spec-item">
+        <div class="label">Platform</div>
+        <div class="value">Android</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Package</div>
+        <div class="value">com.shanmukhavishnu.lekhini</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Minimum Android</div>
+        <div class="value">8.0 (API 26)</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Version</div>
+        <div class="value">1.2</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Languages</div>
+        <div class="value">Telugu, English</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Price</div>
+        <div class="value">Free · No ads</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Shanmukha Vishnu</div>
+    <div style="margin-top:0.5rem;">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="account-deletion.html">Delete Account</a>
+      <a href="mailto:docs.vishnushanmukha@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
